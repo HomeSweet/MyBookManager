@@ -17,25 +17,20 @@ public class BookDAOImpl implements BookDAO {
 
     @Override
     public void addBook(Book book) {
-
         Session session = this.sessionFactory.getCurrentSession();
         session.persist(book);
         logger.info("Book was saved successfully: " + book.toString());
-
     }
 
     @Override
     public void updateBook(Book book) {
-
         Session session = this.sessionFactory.getCurrentSession();
         session.update(book);
         logger.info("Book was updated successfully: " + book.toString());
-
     }
 
     @Override
     public void removeBook(int id) {
-
         Session session = this.sessionFactory.getCurrentSession();
         Book deletedBook = (Book) session.load(Book.class, new Integer(id));
         if (deletedBook != null) {
@@ -43,17 +38,24 @@ public class BookDAOImpl implements BookDAO {
             session.delete(deletedBook);
 
         }
-
         logger.info("Book was deleted successfully: " + deletedBook.toString());
     }
 
     @Override
     public Book getBookById(int id) {
-        return null;
+        Session session = this.sessionFactory.getCurrentSession();
+        Book book = (Book) session.load(Book.class, new Integer(id));
+        logger.info("Book successfully loaded: " + book.toString());
+        return book;
     }
 
     @Override
     public List<Book> listBooks() {
-        return null;
+        Session session = this.sessionFactory.getCurrentSession();
+        List<Book> booksList = session.createQuery("from Book").list();
+        for (Book book : booksList) {
+            logger.info("Book list " + book.toString());
+        }
+        return booksList;
     }
 }
