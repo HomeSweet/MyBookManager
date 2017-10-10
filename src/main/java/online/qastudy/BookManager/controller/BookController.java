@@ -9,6 +9,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
+import online.qastudy.BookManager.service.BookService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Controller;
+
+@Controller
 public class BookController {
     private BookServiceImpl bookService;
 
@@ -26,5 +32,14 @@ public class BookController {
         return "books";
     }
 
-    
+
+    private BookService bookService;
+
+    @Autowired(required = true)
+    @Qualifier(value = "bookservice")
+    public void setBookService(BookService bookService) {
+        this.bookService = bookService;
+    }
+
+
 }
