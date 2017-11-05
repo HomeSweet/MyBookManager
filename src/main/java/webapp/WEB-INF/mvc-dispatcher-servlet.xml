@@ -42,11 +42,11 @@
     </bean>
 
     <!--BookDao and BookService beans-->
-    <bean id="bookDao" class="online.qastudy.BookManager.dao.impl.BookDaoImpl">
+    <bean id="bookDao" class="online.qastudy.BookManager.dao.BookDaoImpl">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
-    <bean id="bookService" class="online.qastudy.BookManager.service.impl.BookServiceImpl">
+    <bean id="bookService" class="online.qastudy.BookManager.service.BookServiceImpl">
         <property name="bookDao" ref="bookDao"/>
     </bean>
 
