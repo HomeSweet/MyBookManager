@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title>Proselyte</title>
+  <title>BookManager</title>
 </head>
 <body>
 <h3>Proselyte presents</h3>

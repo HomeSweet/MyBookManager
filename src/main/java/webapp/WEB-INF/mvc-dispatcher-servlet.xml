@@ -9,7 +9,7 @@
     <context:component-scan base-package="online.qastudy.BookManager"/>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="prefix" value="src/main/java/webapp/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
 
@@ -29,7 +29,7 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="annotatedClasses">
             <list>
-                <value>online.qastudy.BookManager.model.Book</value>
+                <value>net.proselyte.bookmanager.model.Book</value>
             </list>
         </property>
         <property name="hibernateProperties">
@@ -42,13 +42,12 @@
     </bean>
 
     <!--BookDao and BookService beans-->
-    <!--/home/yemax/sources/MyBookManager/src/main/java/online/qastudy/BookManager/dao/impl/BookDAOImpl.java-->
-    <bean id="bookDaoImpl" class="online.qastudy.BookManager.dao.impl.BookDaoImpl">
+    <bean id="bookDao" class="online.qastudy.BookManager.dao.impl.BookDaoImpl">
         <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory"/>
     </bean>
 
-    <bean id="bookServiceImpl" class="online.qastudy.BookManager.service.impl.BookServiceImpl">
-        <property name="bookDaoImpl" ref="bookDaoImpl"/>
+    <bean id="bookService" class="online.qastudy.BookManager.service.impl.BookServiceImpl">
+        <property name="bookDao" ref="bookDao"/>
     </bean>
 
     <context:component-scan base-package="online.qastudy.BookManager"/>
