@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -25,6 +26,18 @@ public class BookController {
         model.addAttribute("listBooks", this.bookService.listBooks());
 
         return "books";
+    }
+
+    @RequestMapping(value = "books/add", method = RequestMethod.POST)
+    public String addBook(@ModelAttribute("book") Book book) {
+
+        if (null == book.getId()) {
+            this.bookService.addBook(book);
+        } else {
+            this.bookService.updateBook(book);
+        }
+
+        return "redirect:/books";
     }
 
 }
