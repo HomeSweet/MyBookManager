@@ -46,4 +46,20 @@ public class BookController {
 
         return "redirect:/books";
     }
+
+
+    @RequestMapping("edit/{id}")
+    public String editBook(@PathVariable("id") int id, Model model) {
+        model.addAttribute("book", this.bookService.getBookById(id));
+        model.addAttribute("listBooks", this.bookService.listBooks());
+
+        return "books";
+    }
+
+    @RequestMapping("bookdata/{id}")
+    public String bookData(@PathVariable("id") int id, Model model) {
+        model.addAttribute("book", this.bookService.getBookById(id));
+
+        return "bookdata";
+    }
 }
