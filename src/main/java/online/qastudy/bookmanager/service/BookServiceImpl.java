@@ -1,8 +1,7 @@
-package online.qastudy.BookManager.service.impl;
+package online.qastudy.bookmanager.service;
 
-import online.qastudy.BookManager.dao.BookDAO;
-import online.qastudy.BookManager.model.Book;
-import online.qastudy.BookManager.service.BookService;
+import online.qastudy.bookmanager.dao.BookDAO;
+import online.qastudy.bookmanager.model.Book;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -10,7 +9,7 @@ import java.util.List;
 public class BookServiceImpl implements BookService {
     private BookDAO bookDAO;
 
-    public void setBookDAO(BookDAO bookDAO) {
+    public BookServiceImpl(BookDAO bookDAO) {
         this.bookDAO = bookDAO;
     }
 

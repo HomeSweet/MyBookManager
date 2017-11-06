@@ -2,10 +2,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title>BookManager</title>
+  <title>Book Manager</title>
 </head>
 <body>
-<h3>Proselyte presents</h3>
+<h3>Yor first test application</h3>
 <br/>
 <a href="<c:url value="/books"/>" target="_blank">Books list</a>
 <br/>

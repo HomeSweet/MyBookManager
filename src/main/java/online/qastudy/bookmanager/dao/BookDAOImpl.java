@@ -1,7 +1,6 @@
-package online.qastudy.BookManager.dao.impl;
+package online.qastudy.bookmanager.dao;
 
-import online.qastudy.BookManager.dao.BookDAO;
-import online.qastudy.BookManager.model.Book;
+import online.qastudy.bookmanager.model.Book;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.slf4j.Logger;
@@ -12,6 +11,14 @@ import java.util.List;
 public class BookDAOImpl implements BookDAO {
 
     private static final Logger logger = LoggerFactory.getLogger(BookDAOImpl.class);
+
+    public SessionFactory getSessionFactory() {
+        return sessionFactory;
+    }
+
+    public void setSessionFactory(SessionFactory sessionFactory) {
+        this.sessionFactory = sessionFactory;
+    }
 
     private SessionFactory sessionFactory;
 

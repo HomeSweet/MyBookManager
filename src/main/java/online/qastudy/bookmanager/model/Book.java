@@ -1,4 +1,4 @@
-package online.qastudy.BookManager.model;
+package online.qastudy.bookmanager.model;
 
 import javax.persistence.*;
 

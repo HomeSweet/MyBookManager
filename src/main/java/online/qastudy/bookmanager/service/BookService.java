@@ -1,6 +1,6 @@
-package online.qastudy.BookManager.service;
+package online.qastudy.bookmanager.service;
 
-import online.qastudy.BookManager.model.Book;
+import online.qastudy.bookmanager.model.Book;
 
 import java.util.List;
 

@@ -16,12 +16,12 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
-    <!--  <context-param>
+    <context-param>
           <param-name>contextConfigLocation</param-name>
-          <param-value>src/main/java/webapp/WEB-INF/mvc-dispatcher-servlet.xml</param-value>
+        <param-value>WEB-INF/mvc-dispatcher-servlet.xml</param-value>
       </context-param>
 
-      <welcome-file-list>
+    <!--  <welcome-file-list>
           <welcome-file>index.jsp</welcome-file>
       </welcome-file-list>-->
 </web-app>
